@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /opt/codedeploy-agent/deployment-root
+    destination: opt/codedeploy-agent
 hooks:
   BeforeInstall:
     - location: install_dependencies.sh
