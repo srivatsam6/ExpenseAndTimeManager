@@ -22,7 +22,7 @@ public class AuthenticationResource {
     }
 
     @GET
-    public Response login(@QueryParam("login") String login, @QueryParam("password") String password){
+    public Response login(@QueryParam("username") String login, @QueryParam("password") String password){
 
         System.out.println("print::::::::"+login);
         System.out.println("password:::"+password);
