@@ -2,6 +2,7 @@ package com.plaid.quickstart.resources;
 
 
 import com.plaid.client.PlaidClient;
+import org.json.JSONObject;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -25,6 +26,13 @@ public class AuthenticationResource {
 
         System.out.println("print::::::::"+login);
         System.out.println("password:::"+password);
-        return Response.status(200).entity("Success").build();
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.append("success", "success");
+        }
+        catch (Exception e){
+            e. printStackTrace();
+        }
+        return Response.status(200).entity(jsonObject.toString()).build();
     }
 }
