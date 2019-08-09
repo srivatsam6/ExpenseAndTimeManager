@@ -1,5 +1,6 @@
 package com.plaid.quickstart;
 
+import com.plaid.quickstart.resources.*;
 import io.dropwizard.Application;
 import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.configuration.EnvironmentVariableSubstitutor;
@@ -9,12 +10,6 @@ import io.dropwizard.setup.Environment;
 import io.dropwizard.views.ViewBundle;
 
 import com.plaid.client.PlaidClient;
-import com.plaid.quickstart.resources.AccessTokenResource;
-import com.plaid.quickstart.resources.AccountsResource;
-import com.plaid.quickstart.resources.IndexResource;
-import com.plaid.quickstart.resources.ItemResource;
-import com.plaid.quickstart.resources.PublicTokenResource;
-import com.plaid.quickstart.resources.TransactionsResource;
 
 public class QuickstartApplication extends Application<QuickstartConfiguration> {
   private PlaidClient plaidClient;
@@ -55,5 +50,6 @@ public class QuickstartApplication extends Application<QuickstartConfiguration> 
     environment.jersey().register(new ItemResource(plaidClient));
     environment.jersey().register(new PublicTokenResource(plaidClient));
     environment.jersey().register(new TransactionsResource(plaidClient));
+    environment.jersey().register(new AuthenticationResource(plaidClient));
   }
 }
