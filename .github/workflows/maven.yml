@@ -24,7 +24,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
       with:
-        - fetch-depth: 0 # required for github-action-get-previous-tag
+      - fetch-depth: 0 # required for github-action-get-previous-tag
 
       #Step-2
     - name: Cache jdk binary
